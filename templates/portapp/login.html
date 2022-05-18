@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'portapp/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'portapp/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'portapp/assets/font-awesome-4.5.0/css/font-awesome.min.css' %}" rel="stylesheet">
+</head>
+<style>
+    #username{
+        border-radius: 20px;
+    }
+    #email{border-radius: 20px;}
+    #password{border-radius: 20px;}
+    #btn{width:20%;}
+
+</style>
+<body style="background-color:wheat;"  >
+    <div class="container w-50 h-75 bg-light p-5" style="margin-top: 80px; >
+        <div class=" mt-3">
+            <div id="log"><h2 class="offset-2">Log In to your account! </h2></div>
+        <form action="" method="post">
+            <i class="bi bi-person"></i>
+            <input type="text" id="username" name="username" placeholder="Enter your username" class="p-3 mt-3 w-100"><br>
+    
+            <i class="fa fa-lock"></i>
+            <input type="password" id="password" placeholder="Create Password" name="password" class="p-3 mt-3 w-100"><br>
+            
+            {% csrf_token %}
+            <div class="mt-3">
+                <button type="submit" class="bg-danger p-2"  id="btn" >LOGIN</button>
+                <!-- <button type="submit">Log In </button> -->
+                <p class="offset-5">Don't have an account? <a href="{% url 'portapp:reg'%}">create an account.</a></p>
+    
+    
+            </div>
+            
+    
+        </div>
+        
+    
+        </form>
+    </div>
+    
+
+    
+</body>
+</html>

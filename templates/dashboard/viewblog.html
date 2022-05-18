@@ -1,0 +1,44 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block title%}
+{% endblock %}
+
+{% block content%}
+
+
+
+ <h2>View Blog</h2> <br>
+
+ <div class="row">
+  <table class="table table-bordered">
+   <tr>
+    <th>S/N</th>
+    <th>Post Title</th>
+    <th>Post Content</th>
+    <th>Post Image</th>
+    <th>Action</th>
+   </tr>
+   {% if view %}
+   {% for v in view %}
+
+   <tr>
+     <td>{{ forloop.counter}}</td>
+     <td>{{ v.title}}</td>
+     <td>{{v.description|truncatewords:20|safe}}</td>
+     <td><img width="70" src="{{ v.image_url }}" alt=""></td>
+     <td>
+       <a href="{% url 'dashboard:viewpost' v.id %}">View</a>
+     </td>
+     <td>
+       <a href="{% url 'dashboard:delete' v.id %}">Delete</a>
+     </td>
+     <td>
+       <a href="{% url 'dashboard:editpost' v.id %}">Edit</a>
+     </td>
+   </tr>
+ 
+{% endfor %}
+{% endif %}
+
+  </table>
+{% endblock %}

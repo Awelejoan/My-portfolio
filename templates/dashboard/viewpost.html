@@ -1,0 +1,15 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<body>
+    <div>
+        <h2>View Posts</h2><br><br>
+        <h3>{{post.title}}</h3><br>
+        <img src="{{post.image_url}}" class="img-fluid w-50 h-50" alt="">
+        <p>{{post.description}}</p>
+    </div>
+    <button><a href="{% url 'dashboard:viewblog'%}">Back</a></button>
+{% endblock %}

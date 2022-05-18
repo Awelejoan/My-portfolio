@@ -1,0 +1,52 @@
+{% extends 'portapp/base.html' %}
+{% load static %}
+{% block title %}
+Blog
+{% endblock %}
+
+{% block content%}
+<link rel="stylesheet" href="{%static 'portapp/assets/css/blog.css'%}">
+<!-- 
+<section id="hero">
+  <div class="hero-container">
+    <h1 style="color:rgb(44, 19, 1); font-style: italic;">Welcome to my Blog</h1> -->
+  
+</section>
+
+<section id="portfolio" class="portfolio"  style="background-color: burlywood;">
+  <div class="container">
+
+    <div class="section-title">
+      <span>Welcome to my Blog</span>
+      <h2>joan's Blog</h2>
+      <p>Welcome to my page which brings information and understanding of things happening around us..Stay tunned</p>
+    </div>
+
+
+    <div class="row portfolio-container">
+      {% if blog %}
+      {% for b in blog %}
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <div class="portfolio-img"><img src="{{b.image_url}}" style="max-width: 300px;min-width: 300px; 
+          max-height: 300px; min-height: 300px;" class="img-fluid" alt=""></div>
+        <div class="portfolio-info">
+          <h3><a href="{% url 'portapp:blog_detail' b.id%}" >{{b.title}}</a></h3>
+          <p>{{b.description|truncatewords:30|safe}}</p>
+          <!-- <a href="{% static 'portapp/assets/img/portfolio/portfolio-4.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+          <i class="bx bx-link"></i></a> -->
+        </div>
+      </div>
+      {% endfor %}
+      {% endif %}
+  
+     
+
+    </div>
+
+  </div>
+</section><!-- End My blog Section -->
+
+{% endblock %}
+ 
+
+  

@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link href="{% static 'portapp/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'portapp/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'portapp/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'portapp/assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static 'portapp/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+</head>
+<body>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <h1 style="font-style: italic;">Blog Detail
+            </h1>
+              <span class="bg-danger">Metro</span>
+              <h1>{{blog_detail.title2|safe}}</h1>
+              <p style="font-style: italic;" ></p>
+              
+              <h4 class="offset-5">{{blog_detail.created_on}}</h4>
+              <img src="{{blog_detail.image_url}}"  class="img-fluid  w-75 h-25" alt="">
+              <h3>{{blog_detail.title}} </h3>
+              <p>{{blog_detail.description|safe}}</p>
+             
+
+          </div>
+          <div class="col-md-2 pt-5 offset-2 ">
+            <!-- <h4>Search</h4>
+            <div >
+              <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+              <div class="bg-danger" style="margin-left: 167px; position: absolute; top: 90px;" ><button inputmode="submit"><i class="bi bi-search"></i></div></button> -->
+            
+              <h3>Most Recent</h3> 
+              <ul>
+                {% if most_recent %}
+                {% for m in most_recent %}
+                <li>
+                  <img src="{{m.image.url}}" width="100" alt="">
+                  <a href="{% url 'portapp:blog_detail' m.id %}">{{m.title}}</a>
+                </li>
+                {% endfor %}
+                {% endif %}
+
+              </ul>
+               
+            
+            
+             
+            
+
+          </div>        
+        </div>
+      </div>          
+    </section>
+    <div>
+      <div class="col-md-6">
+      
+
+      
+        <h3>Your View</h3>
+        {% with comments.count as total_comments%}
+        <h2>
+          {{total_comments}} comments {{total_comments|pluralize}}
+        </h2>
+        {% endwith%}
+        {% for c in comments%}
+        <div>
+          <p class="info">
+            {{c.name}} {{c.created}}
+            
+          </p>
+          {{c.comment|linebreaks}}
+          {% empty%}
+          <p>There are no comments yet</p>
+          {% endfor%}
+          {% if new_comment%}
+          <p>Your comment has been saved</p>
+          {% else %}
+          <h2>Add your Comment</h2>
+  
+            <div class=" h-75 w-75 bg-danger p-3 mt-3">
+              <form action="" method="post"  >
+                {{ comm.as_p }}
+                {% csrf_token %}
+                <p><input type="submit" value="Post"></p>
+              </form>
+  
+            </div>
+          
+          {% endif %}
+  
+         
+        
+  
+      </div>
+      
+
+    </div>
+    
+    
+            
+      </section><!-- End Blog Single Section -->
+      <script src="{% static 'portapp/assets/vendor/purecounter/purecounter.js' %}"></script>
+      <script src="{% static 'portapp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'portapp/assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+      <script src="{% static 'portapp/assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+      <script src="{% static 'portapp/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+      <script src="{% static 'portapp/assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+      <script src="{% static 'portapp/assets/vendor/php-email-form/validate.js' %}"></script>
+    
+</body>
+</html>
