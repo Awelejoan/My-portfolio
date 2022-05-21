@@ -1,23 +1,49 @@
-{% extends 'portapp/base.html' %}
 {% load static %}
-{% block title %}
-Blog
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content%}
-<link rel="stylesheet" href="{%static 'portapp/assets/css/blog.css'%}">
-<!-- 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+
+  <title>{% block title %}
+        {% endblock %}
+  </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'portapp/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'portapp/assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'portapp/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'portapp/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'portapp/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'portapp/assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static 'portapp/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'portapp/assets/css/style.css'%} " rel="stylesheet">
+</head>
+<body>
+  
+
 <section id="hero">
   <div class="hero-container">
-    <h1 style="color:rgb(44, 19, 1); font-style: italic;">Welcome to my Blog</h1> -->
-  
-</section>
+    <h1>My Page</h1>
+    
+</section><!-- End Hero -->
 
 <section id="portfolio" class="portfolio"  style="background-color: burlywood;">
   <div class="container">
 
     <div class="section-title">
-      <span>Welcome to my Blog</span>
+      <span class="blog">Welcome to my Blog</span>
       <h2>joan's Blog</h2>
       <p>Welcome to my page which brings information and understanding of things happening around us..Stay tunned</p>
     </div>
@@ -46,7 +72,43 @@ Blog
   </div>
 </section><!-- End My blog Section -->
 
-{% endblock %}
- 
+
+  <!-- footer starts -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Joan Izuka</h3>
+      <p>That's what we do for a living and we look forward to making more attractive websites for your firms.</p>
+      <div class="social-links">
+        <a href="https://twitter.com/Awelejojo" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://web.facebook.com/joan.izuka.5" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://wa.me/23409035636964" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+        
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>Joan</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'portapp/assets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'portapp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'portapp/assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+  <script src="{% static 'portapp/assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+  <script src="{% static 'portapp/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'portapp/assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'portapp/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'portapp/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
 
   

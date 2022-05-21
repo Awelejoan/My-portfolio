@@ -11,26 +11,29 @@
   <link href="{% static 'portapp/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
   <link href="{% static 'portapp/assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
   <link href="{% static 'portapp/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="{% static 'portapp/assets/css/style.css'%} " rel="stylesheet">
 </head>
 <body>
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-lg-8 col-sm-4">
             <h1 style="font-style: italic;">Blog Detail
             </h1>
               <span class="bg-danger">Metro</span>
               <h1>{{blog_detail.title2|safe}}</h1>
               <p style="font-style: italic;" ></p>
               
-              <h4 class="offset-5">{{blog_detail.created_on}}</h4>
-              <img src="{{blog_detail.image_url}}"  class="img-fluid  w-75 h-25" alt="">
+              
+              <img src="{{blog_detail.image_url}}"  class="img-fluid image-res" alt="">
+              <p class="offset-5">{{blog_detail.created_on}}</p>
               <h3>{{blog_detail.title}} </h3>
               <p>{{blog_detail.description|safe}}</p>
              
 
           </div>
-          <div class="col-md-2 pt-5 offset-2 ">
+          <div class="col-lg-2 col-sm-6  pt-5 offset-2 most ">
             <!-- <h4>Search</h4>
             <div >
               <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
@@ -58,12 +61,8 @@
         </div>
       </div>          
     </section>
-    <div>
-      <div class="col-md-6">
-      
-
-      
-        <h3>Your View</h3>
+    <div class="container">
+      <h3>Your View</h3>
         {% with comments.count as total_comments%}
         <h2>
           {{total_comments}} comments {{total_comments|pluralize}}
@@ -84,11 +83,12 @@
           {% else %}
           <h2>Add your Comment</h2>
   
-            <div class=" h-75 w-75 bg-danger p-3 mt-3">
+            <div class="form  p-3 mt-3 bg-danger">
               <form action="" method="post"  >
                 {{ comm.as_p }}
                 {% csrf_token %}
-                <p><input type="submit" value="Post"></p>
+                <button class="btn btn-light">POST</button>
+                <!-- <p><input type="submit" value="Post"></p> -->
               </form>
   
             </div>
@@ -103,6 +103,13 @@
 
     </div>
     
+
+    </div>
+      <div class="col-md-6">
+      
+
+      
+        
     
             
       </section><!-- End Blog Single Section -->

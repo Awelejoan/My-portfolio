@@ -403,7 +403,7 @@ section {
     margin-bottom: 15px;
   }
   .section-title span {
-    font-size: 38px;
+    font-size: 25px;
   }
 }
 #about{
@@ -1197,4 +1197,37 @@ section {
 #footer .credits {
   font-size: 13px;
 
+}
+@media  only screen and (min-width:320px) and (max-width:1128px){
+.most{
+  position: relative;
+ 
+  margin-left: 0%;
+
+
+}
+.form{
+  width:100%;
+}
+.blog{
+  font-size: 25px;
+}
+.button{
+  width: 30px;
+  background-color: brown;
+}
+.account{
+  font-size: 17px;
+}
+.h2{
+  font-size: 25px;
+  margin-right: 20px;
+}
+.reg{
+  width: 85%;
+  background-color: brown;
+}
+.log{
+  width: 90%;
+}
 }

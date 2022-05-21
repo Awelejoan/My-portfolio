@@ -8,20 +8,21 @@
     <title>Document</title>
     <link href="{% static 'portapp/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'portapp/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'portapp/assets/css/style.css'%} " rel="stylesheet">
 </head>
 <style>
     body{
         background-color: brown;
     }
     .container{
-        background-color: aliceblue;
+        /* background-color: aliceblue; */
     }
 </style>
 <body>
-    <div class= " container w-50 h-75  mt-3 pb-2">
+    <div class= " container mt-3 pb-2 reg">
         <div >
-            <h2 class="offset-3 text-secondary pt-3" style="font-style:italic; font-size:30px;">Create an account!</h2>
-        <form action="" method="post" class="offset-1 pt-3">
+            <h2 class="offset-2 text-secondary pt-3 h2" style="font-style:italic;">Create an account!</h2>
+        <form action="" method="post"class="offset-1 pt-3">
             {% if messages %}
             {% for m in messages %}
             <div class="alert alert-danger">{{m}}</div>

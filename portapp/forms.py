@@ -28,9 +28,9 @@ class ContactForm(forms.ModelForm):
             raise forms.ValidationError('Your emails must match')
 
 class CommentForm(forms.ModelForm):
-    name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'style':'width:70%'}))
-    email= forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control', 'style':'width:70%'}))
-    comment= forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'placeholder':'comment', 'style':'width:70%'}))
+    name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'style':'width:100%'}))
+    email= forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control', 'style':'width:100%'}))
+    comment= forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'placeholder':'comment', 'style':'width:100%'}))
     class Meta():
         model =Comment 
         fields = ('name', 'email', 'comment')
